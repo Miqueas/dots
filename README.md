@@ -14,3 +14,7 @@ You can find some of the configuration files I use on my system
 ### Neofetch
 
 ![](screenshots/neofetch.png)
+
+### Whiskermenu
+
+![](screenshots/whiskermenu.png)
