@@ -1,0 +1,55 @@
+/* Since this is loaded "globally", the #whiskermenu-window
+ * selector ensures to apply only for whiskermenu
+ */
+
+/* Background */
+#whiskermenu-window { background: none; }
+
+/* Background color and margin */
+#whiskermenu-window > frame {
+  background: rgba(24, 24, 24, 0.8);
+  padding: 50px 100px;
+  padding-top: 40px;
+}
+
+/* Borders */
+#whiskermenu-window
+#whiskermenu-window > frame,
+#whiskermenu-window .launchers-pane,
+#whiskermenu-window > frame > border {
+  border: none;
+}
+
+/* Main view of launchers */
+#whiskermenu-window > frame > stack > grid > box > stack {
+  margin: 40px;
+}
+
+/* Search entry (parent box) */
+#whiskermenu-window .search-area {
+  padding: 0 220px;
+}
+
+/* Category buttons */
+#whiskermenu-window .category-button {
+  padding: 3px 6px;
+  margin: 2px;
+  font-weight: bold;
+}
+
+/* Removes the scrollbars */
+#whiskermenu-window .overlay-indicator {
+  opacity: 0;
+}
+
+/* Launchers icons view and launchers icons. */
+#whiskermenu-window .launchers-pane .launchers {
+  background: none;
+}
+
+/* Icons hovers */
+#whiskermenu-window .launchers *:hover,
+#whiskermenu-window .category-button:hover,
+#whiskermenu-window .category-button:checked {
+  background: rgba(250, 250, 250, 0.2);
+}

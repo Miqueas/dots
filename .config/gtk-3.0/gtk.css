@@ -1,0 +1,34 @@
+/* I recommend to just import the CSS files
+ * for every theme instead of putting the
+ * content here.
+ */
+@import url("WhiskerMenu-MojaveDark.css");
+
+/* Workaround for an small bug/problem with the
+ * Adementary light theme and the appmenu plugin
+ * for XFCE. Uncomment if you're using the
+ * Adementary light theme
+ */
+/*
+#appmenu-22 menu menuitem label:dir(rtl),
+#appmenu-22 menu menuitem label:dir(ltr),
+#appmenu-22 .menu menuitem label:dir(rtl),
+#appmenu-22 .menu menuitem label:dir(ltr),
+#appmenu-22 .context-menu menuitem label:dir(rtl),
+#appmenu-22 .context-menu menuitem label:dir(ltr),
+#appmenu-22 menu menuitem label:dir(rtl),
+#appmenu-22 menu menuitem label:dir(ltr),
+#appmenu-22 .menu menuitem label:dir(rtl),
+#appmenu-22 .menu menuitem label:dir(ltr),
+#appmenu-22 .context-menu menuitem label:dir(rtl),
+#appmenu-22 .context-menu menuitem label:dir(ltr) {
+  color: inherit;
+}
+*/
+
+/* XFCE Panel selector, note that this will
+ * modify every XFCE Panel (I guess)
+ */
+.xfce4-panel {
+  background-color: rgba(24, 24, 24, 0.8);
+}
