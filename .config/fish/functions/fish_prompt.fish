@@ -1,42 +1,53 @@
 function fish_prompt
   set -l s $status
-  set -l u $USER
-  set -l h $hostname
-  set -l cwd (string replace $HOME '~' (pwd))
+  
+  set -l d  (set_color --dim)
+  set -l b  (set_color --bold)
+  set -l i  (set_color --italics)
+  set -l r  (set_color --reverse)
+  set -l u  (set_color --underline)
+  set -l c0 (set_color normal)
+  set -l c1 (set_color blue)
+  set -l c2 (set_color cyan)
+  set -l c3 (set_color green)
+  set -l c4 (set_color magenta)
+  set -l c5 (set_color red)
+  set -l c6 (set_color yellow)
+  set -l c7 (set_color white)
+  set -l c8 (set_color black)
+
+  set -l brown  (set_color 715344)
+
+  set -l pwd (pwd)
+  set -l cwd (string replace $HOME '~' $pwd)
   set -l uid (id -u)
-  set -l pchar "\$"
-  set -l branch
-  set -l btemplate
+  set -l pchar "»"
 
-  set -l b  (set_color -o)
-  set -l r  (set_color normal)
-  set -l c1 (set_color -o blue)
-  set -l c2 (set_color -o red)
-  set -l c3 (set_color -o yellow)
-  set -l c4 (set_color -o green)
-  set -l c5 (set_color -o cyan)
-  set -l c6 (set_color -o magenta)
+  set -l time (printf "$b$c1%s$c0" (date "+%I:%M %P"))
+  set -l last (printf "$b$c6%s$c0" (echo $CMD_DURATION | humanize_duration))
 
-  [ $uid -eq 0 ]; and set pchar '#'
-  [ (jobs) ]; and set pchar "+ $pchar"
-
-  set -l utemplate $b'['$r$c1"$u"$r$b']'$r
-  [ $uid -eq 0 ]; and set utemplate $b'['$c2"$u"$r$b']'$r
-
-  set -l htemplate $b'('$r$c3"$h"$r$b')'$r
-  set -l stemplate $b'{'$r$c4"$s"$r$b'}'$r
-  [ ! $s -eq 0 ]; and set stemplate $b'{'$r$c2"$s"$r$b'}'$r
-  set -l ptemplate $c5' in '$r$b"'$cwd'"$r
-  set -l ctemplate $b"$pchar"$r
-
-  if [ -d .git ]; or git rev-parse --git-dir 2> /dev/null
-    set cwd (basename (pwd))
-    set branch (git branch --show-current)
-    set btemplate $c6"$branch"$r
-    set ptemplate $c5' in '$r$b"'$cwd:$btemplate$b'"$r
+  set -l l1 " $time ∷ $last"
+  set -l l2 " $b$brown%s$c0"
+  set -l l3 " $b%s$pchar$c0 "
+  
+  if [ $s -eq 0 ]
+    set l3 (printf $l3 $c3)
+  else
+    set l3 (printf $l3 $c5)
   end
 
-  echo -s ''
-  echo -s $utemplate ':' $htemplate ' ' $stemplate $ptemplate
-  echo -s $ctemplate ' '
+  if [ -d .git ]; or [ git rev-parse --git-dir 2> /dev/null ]
+    set cwd (basename $pwd)
+    set -l branch (basename (git describe --all))
+
+    set l2 (printf $l2 $cwd)
+    set -a l2 " $d«$c0 $b$c2$branch$c0"
+  else
+    set l2 (printf $l2 $cwd)
+  end
+
+  echo
+  echo -s $l1
+  echo -s $l2
+  echo -s $l3
 end
