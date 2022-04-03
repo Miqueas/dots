@@ -1,0 +1,50 @@
+/* Shared CSS rules for McMojave WhiskerMenu theme */
+
+/* Background */
+#whiskermenu-window { background: none; }
+
+/* Background color and margin */
+#whiskermenu-window > frame {
+  padding: 50px 100px;
+  padding-top: 40px;
+}
+
+/* Borders */
+#whiskermenu-window
+#whiskermenu-window > frame,
+#whiskermenu-window .launchers-pane,
+#whiskermenu-window > frame > border {
+  border: none;
+}
+
+/* Main view of launchers */
+#whiskermenu-window > frame > stack > grid > box > stack {
+  margin: 40px;
+}
+
+/* Search entry (parent box) */
+#whiskermenu-window .search-area {
+  padding: 0 220px;
+}
+
+/* Category buttons */
+#whiskermenu-window .category-button {
+  padding: 3px 6px;
+  margin: 2px;
+  font-weight: bold;
+}
+
+/* Removes the scrollbars */
+#whiskermenu-window .overlay-indicator {
+  opacity: 0;
+}
+
+/* Launchers icons view and launchers icons. */
+#whiskermenu-window .launchers-pane .launchers {
+  background: none;
+}
+
+/* Prevent text color being inconsistent */
+#whiskermenu-window * {
+  color: inherit;
+}

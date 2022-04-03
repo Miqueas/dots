@@ -2,7 +2,7 @@
  * for every theme instead of putting the
  * content here.
  */
-@import url("WhiskerMenu-MojaveDark.css");
+@import url("WhiskerMenu-MojaveLight.css");
 
 /* Workaround for an small bug/problem with the
  * Adementary light theme and the appmenu plugin
@@ -25,10 +25,3 @@
   color: inherit;
 }
 */
-
-/* XFCE Panel selector, note that this will
- * modify every XFCE Panel (I guess)
- */
-.xfce4-panel {
-  background-color: rgba(24, 24, 24, 0.8);
-}
