@@ -3,7 +3,7 @@
   "editor.fontFamily": "Cascadia Code",
   "editor.tabSize": 2,
   "window.dialogStyle": "custom",
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.iconTheme": "Monokai Pro Icons",
   "editor.minimap.enabled": false,
   "mesonbuild.configureOnOpen": false,
@@ -21,5 +21,6 @@
   "window.enableMenuBarMnemonics": false,
   "editor.detectIndentation": false,
   "editor.autoClosingBrackets": "always",
-  "editor.foldingStrategy": "indentation"
+  "editor.foldingStrategy": "indentation",
+  "editor.fontLigatures": true
 }
