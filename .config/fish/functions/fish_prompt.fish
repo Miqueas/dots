@@ -13,10 +13,6 @@ function fish_prompt
   set -l c4 (set_color magenta)
   set -l c5 (set_color red)
   set -l c6 (set_color yellow)
-  set -l c7 (set_color white)
-  set -l c8 (set_color black)
-
-  set -l brown  (set_color 715344)
 
   set -l pwd (pwd)
   set -l cwd (string replace $HOME '~' $pwd)
@@ -26,21 +22,29 @@ function fish_prompt
   set -l time (printf "$b$c1%s$c0" (date "+%I:%M %P"))
   set -l last (printf "$b$c6%s$c0" (echo $CMD_DURATION | humanize_duration))
 
-  set -l l1 " $time ∷ $last"
-  set -l l2 " $b$brown%s$c0"
+  set -l l1 " $time $d∷$c0 $last"
+  set -l l2 " $b%s$c0"
   set -l l3 " $b%s$pchar$c0 "
   
   if [ $s -eq 0 ]
     set l3 (printf $l3 $c3)
   else
-    set l3 (printf $l3 $c5)
+    set l3 (printf $l3 "$c5$s ")
   end
 
-  if [ -d .git ]; or [ git rev-parse --git-dir 2> /dev/null ]
+  if [ -d .git ]; or [ (git rev-parse --git-dir 2> /dev/null) ]
     set cwd (basename $pwd)
-    set -l branch (basename (git describe --all))
+    set -l branch
 
-    set l2 (printf $l2 $cwd)
+    if not [ -z (git branch --show-current) ]
+      set branch (git branch --show-current)
+    else if [ (git describe --all 2> /dev/null) ]
+      set branch (basename (git describe --all))
+    else if [ (git rev-parse --abbrev-ref HEAD 2> /dev/null) ]
+      set branch (git rev-parse --abbrev-ref HEAD)
+    end
+
+    set l2 (printf $l2 $c4$cwd)
     set -a l2 " $d«$c0 $b$c2$branch$c0"
   else
     set l2 (printf $l2 $cwd)
