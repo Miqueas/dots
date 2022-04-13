@@ -2,7 +2,7 @@
  * for every theme instead of putting the
  * content here.
  */
-@import url("WhiskerMenu-MojaveLight.css");
+@import url("WhiskerMenu-MojaveDark.css");
 
 /* Workaround for an small bug/problem with the
  * Adementary light theme and the appmenu plugin
@@ -24,4 +24,4 @@
 #appmenu-22 .context-menu menuitem label:dir(ltr) {
   color: inherit;
 }
-*/
+*/@import 'colors.css';
