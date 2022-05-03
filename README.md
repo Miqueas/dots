@@ -7,16 +7,15 @@
 
 System details:
 
-  * __Distro__: Linux Mint 20.3
-  * __DE__: XFCE
-  * __WM__: XFWM
-  * __Theme__: Mojave Dark ([link](https://www.pling.com/p/1275087/))
+  * __Distro__: Fedora 35
+  * __DE__: KDE Plasma
+  * __WM__: KWin
+  * __Theme__: Default (Breeze)
   * __Icons__: Papirus Dark ([link](https://www.pling.com/p/1166289/))
-  * __Font__: Source Sans Pro
-  * __Monospace Font__: Cascadia Code
-  * __Panel__: XFCE Panel
-  * __Global Menu__: `xfce4-appmenu-plugin` (apt, [link](https://gitlab.com/vala-panel-project/vala-panel-appmenu))
-  * __Terminal__: XFCE Terminal
+  * __Font__: Source Sans Pro (10pt)
+  * __Monospace Font__: Cascadia Code (10pt)
+  * __Panel__: Default (whatever Plasma uses for it)
+  * __Terminal__: Konsole
 
 ### Fish
 
@@ -25,7 +24,3 @@ System details:
 ### Neofetch
 
 ![](screenshots/neofetch.png)
-
-### Whiskermenu
-
-![](screenshots/whiskermenu.png)
