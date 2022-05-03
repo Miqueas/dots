@@ -3,7 +3,6 @@
   "editor.fontFamily": "Cascadia Code",
   "editor.tabSize": 2,
   "window.dialogStyle": "custom",
-  "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "Monokai Pro Icons",
   "editor.minimap.enabled": false,
   "mesonbuild.configureOnOpen": false,
@@ -14,12 +13,17 @@
   "codesnap.showWindowControls": false,
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
-  "window.menuBarVisibility": "visible",
   "window.titleBarStyle": "custom",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
   "editor.detectIndentation": false,
   "editor.autoClosingBrackets": "always",
   "editor.foldingStrategy": "indentation",
-  "editor.fontLigatures": true
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "One Monokai",
+  "window.menuBarVisibility": "visible",
+  "workbench.layoutControl.type": "toggles",
+  "d.dubCompiler": "ldc2",
+  "d.stdlibPath": "auto",
+  "d.servedPath": "/home/miqueas/.local/share/code-d/bin/serve-d"
 }
