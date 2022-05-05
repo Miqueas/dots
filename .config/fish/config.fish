@@ -12,6 +12,11 @@ for p in $LocalBins $NIMPATH $DENO_INSTALL_ROOT
 end
 
 alias fp "flatpak"
+alias fpi "flatpak install -y"
+alias fpu "flatpak uninstall -y"
+alias fpc "flatpak uninstall -y --unused"
+alias fps "flatpak search --columns=name:f,description:e,application:f,version,remotes"
+alias fpl "flatpak list --columns=name:f,application:f,version,branch"
 alias ls "ls -lhF --color"
 alias la "ls -lhAF --color"
 
