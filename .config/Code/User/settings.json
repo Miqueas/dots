@@ -20,10 +20,12 @@
   "editor.autoClosingBrackets": "always",
   "editor.foldingStrategy": "indentation",
   "editor.fontLigatures": true,
-  "workbench.colorTheme": "One Monokai",
-  "window.menuBarVisibility": "visible",
-  "workbench.layoutControl.type": "toggles",
+  "window.menuBarVisibility": "toggle",
+  "workbench.layoutControl.type": "menu",
   "d.dubCompiler": "ldc2",
   "d.stdlibPath": "auto",
-  "d.servedPath": "/home/miqueas/.local/share/code-d/bin/serve-d"
+  "d.servedPath": "/home/miqueas/.local/share/code-d/bin/serve-d",
+  "nim.lintOnSave": false,
+  "nim.provider": "lsp",
+  "workbench.colorTheme": "Mono Atom"
 }
