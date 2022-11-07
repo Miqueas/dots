@@ -23,13 +23,13 @@ alias la "ls -lhAF --color"
 
 # If "$XDG_DATA_HOME" doesn't exists, fallback to "$HOME/.local/share"
 # (which is the usual value for the XDG variable)
-set -l DataHome
+# set -l DataHome
 
-if set -q $XDG_DATA_HOME
-  set DataHome $XDG_DATA_HOME
-else
-  set DataHome "$HOME/.local/share"
-end
+# if set -q $XDG_DATA_HOME
+#   set DataHome $XDG_DATA_HOME
+# else
+#   set DataHome "$HOME/.local/share"
+# end
 
 # I have a problem with flatpak related to $XDG_DATA_DIRS, afaik, this
 # is because I'm using fish as my shell instead of bash or something
