@@ -1,31 +1,32 @@
 {
+  // ====== Editor ====== //
   "editor.fontSize": 13,
   "editor.fontFamily": "Cascadia Code",
   "editor.tabSize": 2,
-  "window.dialogStyle": "custom",
-  "workbench.iconTheme": "Monokai Pro Icons",
+  "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
-  "mesonbuild.configureOnOpen": false,
-  "nim.enableNimsuggest": false,
-  "Lua.telemetry.enable": false,
+  "editor.detectIndentation": false,
+  "editor.autoClosingBrackets": "always",
+  "editor.foldingStrategy": "indentation",
+  // ====== Window ====== //
+  "window.dialogStyle": "custom",
+  "window.titleBarStyle": "custom",
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
   "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  // ====== Extensions ====== //
+  // Lua (sumneko.lua)
+  "Lua.telemetry.enable": false,
+  // Nim (nimsaem.nimvscode)
+  "nim.buildOnSave": false,
+  "nim.provider": "lsp",
+  // CodeSnap (adpyke.codesnap)
   "codesnap.backgroundColor": "rgba(0,0,0,0)",
   "codesnap.showWindowControls": false,
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
-  "window.titleBarStyle": "custom",
-  "window.customMenuBarAltFocus": false,
-  "window.enableMenuBarMnemonics": false,
-  "editor.detectIndentation": false,
-  "editor.autoClosingBrackets": "always",
-  "editor.foldingStrategy": "indentation",
-  "editor.fontLigatures": true,
-  "window.menuBarVisibility": "toggle",
-  "workbench.layoutControl.type": "menu",
-  "d.dubCompiler": "ldc2",
-  "d.stdlibPath": "auto",
-  "d.servedPath": "/home/miqueas/.local/share/code-d/bin/serve-d",
-  "nim.lintOnSave": false,
-  "nim.provider": "lsp",
-  "workbench.colorTheme": "Mono Atom"
+  // Meson (mesonbuild.mesonbuild)
+  "mesonbuild.configureOnOpen": false,
 }
