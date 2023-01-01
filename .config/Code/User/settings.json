@@ -20,8 +20,8 @@
   // Lua (sumneko.lua)
   "Lua.telemetry.enable": false,
   // Nim (nimsaem.nimvscode)
-  "nim.buildOnSave": false,
-  "nim.provider": "lsp",
+  // "nim.buildOnSave": false,
+  // "nim.provider": "lsp",
   // CodeSnap (adpyke.codesnap)
   "codesnap.backgroundColor": "rgba(0,0,0,0)",
   "codesnap.showWindowControls": false,
