@@ -7,15 +7,16 @@
 
 System details:
 
-  * __Distro__: Fedora 35
-  * __DE__: KDE Plasma
-  * __WM__: KWin
-  * __Theme__: Default (Breeze)
+  * __Distro__: Arch
+  * __DE__: GNOME
+  * __WM__: Mutter
+  * __Theme__: Adwaita
   * __Icons__: Papirus Dark ([link](https://www.pling.com/p/1166289/))
-  * __Font__: Source Sans Pro (10pt)
+  * __Font__: Cantarell (default size)
   * __Monospace Font__: Cascadia Code (10pt)
-  * __Panel__: Default (whatever Plasma uses for it)
-  * __Terminal__: Konsole
+  * __Terminal__: Blackbox
+
+Wallpaper from [Unsplash](https://unsplash.com/es/fotos/R6me1o4eWxg), credits to the author.
 
 ### Fish
 
