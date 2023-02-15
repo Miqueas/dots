@@ -12,6 +12,7 @@ alias ls "exa -lF --no-time --no-permissions --no-user --group-directories-first
 alias la "exa -laF --no-time --no-permissions --no-user --group-directories-first"
 alias lt "exa -lTF --no-time --no-permissions --no-user --group-directories-first"
 alias lat "exa -laTF --no-time --no-permissions --no-user --group-directories-first"
+alias cat bat
 
 set -l LocalBins "$HOME/.local/bin"
 set -l NimbleBins "$HOME/.nimble/bin"
