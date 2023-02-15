@@ -1,32 +1,60 @@
 {
-  // ====== Editor ====== //
-  "editor.fontSize": 13,
-  "editor.fontFamily": "Cascadia Code",
+  /// ====== EDITOR
+  "editor.fontSize": 12,
+  "editor.fontFamily": "CaskaydiaCove Nerd Font",
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.detectIndentation": false,
   "editor.autoClosingBrackets": "always",
   "editor.foldingStrategy": "indentation",
-  // ====== Window ====== //
+  "editor.semanticHighlighting.enabled": true,
+  /// ====== WINDOW
   "window.dialogStyle": "custom",
   "window.titleBarStyle": "custom",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
+  /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "Monokai Pro Icons",
-  // ====== Extensions ====== //
-  // Lua (sumneko.lua)
+  "workbench.colorTheme": "GitHub Light",
+  // "workbench.iconTheme": "Monokai Pro Icons",
+  "workbench.editor.untitled.hint": "hidden",
+  /// ====== TERMINAL
+  "terminal.integrated.cursorStyle": "line",
+  /// ====== FILES
+  "files.eol": "\n",
+  /// ====== BREADCRUMBS
+  "breadcrumbs.enabled": false,
+  /// ====== SECURITY
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.banner": "never",
+  /// ====== EXTENSIONS
+  /// Lua (sumneko.lua)
   "Lua.telemetry.enable": false,
-  // Nim (nimsaem.nimvscode)
+  "Lua.runtime.version": "Lua 5.1",
+  "Lua.completion.callSnippet": "Replace",
+  "Lua.completion.displayContext": 4,
+  "Lua.completion.keywordSnippet": "Both",
+  "Lua.hint.enable": true,
+  /// Nim (nimsaem.nimvscode)
   // "nim.buildOnSave": false,
   "nim.provider": "none",
-  // CodeSnap (adpyke.codesnap)
+  /// CodeSnap (adpyke.codesnap)
   "codesnap.backgroundColor": "rgba(0,0,0,0)",
   "codesnap.showWindowControls": false,
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
-  // Meson (mesonbuild.mesonbuild)
-  "mesonbuild.configureOnOpen": false
+  /// Meson (mesonbuild.mesonbuild)
+  "mesonbuild.configureOnOpen": false,
+  /// Go (golang.go)
+  // "go.buildOnSave": "off",
+  // "[go]": {
+  //   "editor.formatOnSave": false,
+  //   "editor.codeActionsOnSave": {
+  //     "source.organizeImports": false
+  //   }
+  // }
 }
