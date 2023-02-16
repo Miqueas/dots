@@ -16,7 +16,7 @@
   "window.enableMenuBarMnemonics": false,
   /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "GitHub Dark",
   // "workbench.iconTheme": "Monokai Pro Icons",
   "workbench.editor.untitled.hint": "hidden",
   /// ====== TERMINAL
