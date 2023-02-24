@@ -16,6 +16,12 @@ alias cat bat
 
 set -l LocalBins "$HOME/.local/bin"
 set -l NimbleBins "$HOME/.nimble/bin"
-set -x BUN_INSTALL "$HOME/.bun"
+# set -x BUN_INSTALL "$HOME/.bun"
 
-set -x PATH $PATH $LocalBins $NimbleBins $BUN_INSTALL/bin
+for P in $LocalBins "$LocalBins/gcm" $NimbleBins
+  if not contains $P $PATH
+    set -a PATH $P
+  end
+end
+
+#set -x PATH $PATH $LocalBins $NimbleBins $BUN_INSTALL/bin
