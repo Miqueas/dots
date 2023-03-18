@@ -33,8 +33,10 @@ function fish_prompt
   end
 
   if [ -d .git ]; or [ (git rev-parse --git-dir 2> /dev/null) ]
-    set cwd (basename $pwd)
     set -l branch
+    set -l rootDir (git rev-parse --show-toplevel)
+    # this will show the current directory like: $rootDir/subdir/anotherDir and so
+    set cwd (basename $rootDir)(string replace $rootDir '' $pwd)
 
     if not [ -z (git branch --show-current) ]
       set branch (git branch --show-current)
@@ -44,8 +46,7 @@ function fish_prompt
       set branch (git rev-parse --abbrev-ref HEAD)
     end
 
-    set l2 (printf $l2 $c4$cwd)
-    set -a l2 " $d«$c0 $b$c2$branch$c0"
+    set l2 (printf " git[$b$c2$branch$c0] $d@$c0$l2" $c4$cwd)
   else
     set l2 (printf $l2 $cwd)
   end
