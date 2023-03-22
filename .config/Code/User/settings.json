@@ -19,7 +19,7 @@
   /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.colorTheme": "Plastic",
+  "workbench.colorTheme": "Monokai Pro",
   "workbench.iconTheme": "helium-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
   /// ====== TERMINAL
