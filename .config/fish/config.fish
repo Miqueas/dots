@@ -14,13 +14,13 @@ alias lt "exa -lTF --no-time --no-permissions --no-user --group-directories-firs
 alias lat "exa -laTF --no-time --no-permissions --no-user --group-directories-first"
 alias cat bat
 
-set -l LocalBins "$HOME/.local/bin"
-set -l NimbleBins "$HOME/.nimble/bin"
+set -l localBins "$HOME/.local/bin"
+set -l nimbleBins "$HOME/.nimble/bin"
 # set -x BUN_INSTALL "$HOME/.bun"
 
-for P in $LocalBins "$LocalBins/gcm" $NimbleBins
-  if not contains $P $PATH
-    set -a PATH $P
+for p in $localBins "$localBins/gcm" $nimbleBins
+  if not contains $p $PATH
+    set -a PATH $p
   end
 end
 
