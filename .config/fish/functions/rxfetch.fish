@@ -2,6 +2,7 @@
 
 function rxfetch -d "System information fetcher"
   # Colors
+  set -l d        (set_color --dim)
   set -l c0       (set_color normal)
   set -l c1       (set_color -o magenta)
   set -l c2       (set_color -o green)
@@ -11,25 +12,24 @@ function rxfetch -d "System information fetcher"
   set -l c6       (set_color -o cyan)
 
   set -l template "
-
-    $c1 os     $c0  $(_get_distro_name) $(uname -m)
-    $c2 ker    $c0  $(uname -r)
-    $c6 pkgs   $c0  $(_get_package_info)
-    $c3 sh     $c0  $(basename $SHELL)
-    $c5 ram    $c0  $(_get_mem)
-    $c1 init   $c0  $(_get_init)
-    $c2 de/wm  $c0  $(_get_de_wm)
-    $c6 up     $c0  $(_get_uptime)
-    $c5 disk   $c0  $(_get_storage_info)
-
+                    $c2 os $c0   $d=>$c0 $(getDistroName) ($(uname -m))
+  $c3       /\\      $c0   $c5 ker   $c0$d=>$c0 $(uname -r)
+  $c3      /  \\     $c0   $c6 pkgs  $c0$d=>$c0 $(getPackageInfo)
+  $c3     /%s\\$c0$c3   \\   $c0   $c4  sh   $c0 $d=>$c0 $(basename $SHELL)
+  $c3    /      \\   $c0   $c1 ram   $c0$d=>$c0 $(getMemoryInfo)
+  $c3   /   %s,,$c0$c3   \\  $c0   $c2 init  $c0$d=>$c0 $(getInit)
+  $c3  /   |  |  %s-$c0$c3\\ $c0   $c5 de/wm $c0$d=>$c0 $(getDEWMInfo)
+  $c3 /%s_-''    ''-_$c0$c3\\$c0   $c6 up   $c0 $d=>$c0 $(getUptime)
+                    $c4 disk $c0 $d=>$c0 $(getStorageInfo)
 "
 
-  echo $template
+  printf $template "$c0$d" "$c0$d" "$c0$d" "$c0$d"
 end
 
 # Get the init
-function _get_init
+function getInit
   set -l os (uname -o)
+
   if [ "$os" = "Android" ]
     echo 'init.rc'
   else if pidof -q systemd
@@ -41,40 +41,48 @@ function _get_init
   end
 end
 
-# Get count of packages installed
-function _get_pkg_count
-  set -l package_managers "xbps-install" "apk" "apt" "pacman" "nix" "dnf" "rpm" "emerge"
+# Get the system package manager
+function getPackageManager
+  set -l packageManagers "xbps-install" "apk" "apt" "pacman" "nix" "dnf" "rpm" "emerge"
 
-  for package_manager in $package_managers
-    if command -q $package_manager
-      switch $package_manager
-        case xbps-install
-          xbps-query -l | wc -l
-        case apk
-          apk search | wc -l
-        case apt
-          apt list --installed 2> /dev/null | wc -l
-        case pacman
-          pacman -Q | wc -l
-        case nix
-          nix-env -qa --installed '*' | wc -l
-        case dnf
-          dnf list installed | wc -l
-        case rpm
-          rpm -qa | wc -l
-        case emerge
-          qlist -I | wc -l
-      end
-
+  for packageManager in $packageManagers
+    if command -q $packageManager
+      echo $packageManager
       return
     end
   end
 
-  echo 0
+  echo "unknown"
+end
+
+# Get count of packages installed
+function getPackageCount
+  set -l packageManager (getPackageManager)
+
+  switch $packageManager
+    case xbps-install
+      xbps-query -l | wc -l
+    case apk
+      apk search | wc -l
+    case apt
+      apt list --installed 2> /dev/null | wc -l
+    case pacman
+      pacman -Q | wc -l
+    case nix
+      nix-env -qa --installed '*' | wc -l
+    case dnf
+      dnf list installed | wc -l
+    case rpm
+      rpm -qa | wc -l
+    case emerge
+      qlist -I | wc -l
+    case unknown
+      echo 0
+  end
 end
 
 # Get count of flatpaks installed
-function _get_flatpak_count
+function getFlatpakCount
   if command -q flatpak
     flatpak list | wc -l
     return
@@ -84,51 +92,53 @@ function _get_flatpak_count
 end
 
 # Get package information formatted
-function _get_package_info
-  set -l pkg_count     (_get_pkg_count)
-  set -l flatpak_count (_get_flatpak_count)
+function getPackageInfo
+  set -l packageCount (getPackageCount)
+  set -l flatpakCount (getFlatpakCount)
+  set -l template "%s (%s)"
 
-  if [ $pkg_count -ne 0 ]
-    echo -n $pkg_count
+  if [ $packageCount -ne 0 ]
+    printf $template $packageCount (getPackageManager)
 
-    if [ $flatpak_count -ne 0 ]
-      echo " ($flatpak_count flatpak)"
+    if [ $flatpakCount -ne 0 ]
+      printf ", $template" $flatpakCount "flatpak"
     end
-  else if [ $flatpak_count -ne 0 ]
-    echo "$flatpak_count flatpak"
+  else if [ $flatpakCount -ne 0 ]
+    printf "$template" $flatpakCount "flatpak"
   else
-    echo "unknown"
+    printf "unknown"
   end
 end
 
 # Get distro name
-function _get_distro_name
+function getDistroName
   set -l os (uname -o)
+
   if [ "$os" = "Android" ]
-    echo 'Android'
+    echo 'android'
   else
-    awk -F '"' '/PRETTY_NAME/ { print $2 }' /etc/os-release
+    string lower (awk -F '"' '/PRETTY_NAME/ { print $2 }' /etc/os-release)
   end
 end
 
 # Get root partition space used
-function _get_storage_info
+function getStorageInfo
   df -H --output=used,size / | awk 'NR == 2 { print $1" / "$2 }'
 end
 
 # Get Memory usage
-function _get_mem
+function getMemoryInfo
   free --mega | awk 'NR == 2 { print $3" / "$2" MB" }'
 end
 
 # Get uptime
-function _get_uptime
-  uptime -p | sed 's/up//'
+function getUptime
+  uptime -p | sed 's/up\s//'
 end
 
 # Get DE/WM
 # Reference: https://github.com/unixporn/robbb/blob/master/fetcher.sh
-function _get_de_wm
+function getDEWMInfo
   set -l wm $XDG_CURRENT_DESKTOP
   [ $wm ]; or set wm $DESKTOP_SESSION
 
