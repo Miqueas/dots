@@ -27,7 +27,7 @@ function fish_prompt
   set -l l3 " $b%s$pchar$c0 "
   
   if [ $s -eq 0 ]
-    set l3 (printf $l3 $c3)
+    set l3 (printf $l3 '')
   else
     set l3 (printf $l3 "$c5$s ")
   end
@@ -40,13 +40,11 @@ function fish_prompt
 
     if not [ -z (git branch --show-current) ]
       set branch (git branch --show-current)
-    else if [ (git describe --all 2> /dev/null) ]
-      set branch (basename (git describe --all))
-    else if [ (git rev-parse --abbrev-ref HEAD 2> /dev/null) ]
-      set branch (git rev-parse --abbrev-ref HEAD)
+    else
+      set branch (git rev-parse --short HEAD)
     end
 
-    set l2 (printf " git[$b$c2$branch$c0] $d@$c0$l2" $c4$cwd)
+    set l2 (printf "$d git[$c0$b$c3$branch$c0$d] $d@$c0$l2" $c4$cwd)
   else
     set l2 (printf $l2 $cwd)
   end
