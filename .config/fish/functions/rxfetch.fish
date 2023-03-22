@@ -12,6 +12,7 @@ function rxfetch -d "System information fetcher"
   set -l c6       (set_color -o cyan)
 
   set -l template "
+
                     $c2 os $c0   $d=>$c0 $(getDistroName) ($(uname -m))
   $c3       /\\      $c0   $c5 ker   $c0$d=>$c0 $(uname -r)
   $c3      /  \\     $c0   $c6 pkgs  $c0$d=>$c0 $(getPackageInfo)
@@ -21,6 +22,7 @@ function rxfetch -d "System information fetcher"
   $c3  /   |  |  %s-$c0$c3\\ $c0   $c5 de/wm $c0$d=>$c0 $(getDEWMInfo)
   $c3 /%s_-''    ''-_$c0$c3\\$c0   $c6 up   $c0 $d=>$c0 $(getUptime)
                     $c4 disk $c0 $d=>$c0 $(getStorageInfo)
+
 "
 
   printf $template "$c0$d" "$c0$d" "$c0$d" "$c0$d"
