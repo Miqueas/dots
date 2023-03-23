@@ -22,6 +22,7 @@
   "workbench.colorTheme": "Monokai Pro",
   "workbench.iconTheme": "helium-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
+  "workbench.editor.showTabs": false,
   /// ====== TERMINAL
   "terminal.integrated.cursorStyle": "line",
   /// ====== FILES
