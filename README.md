@@ -20,7 +20,7 @@ System details:
 
 Wallpaper from [Unsplash](https://unsplash.com/es/fotos/R6me1o4eWxg), credits to the author.
 
-### Console
+### Black Box
 
 ![](screenshots/console.png)
 
