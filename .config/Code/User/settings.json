@@ -9,6 +9,7 @@
   "editor.autoClosingBrackets": "always",
   "editor.foldingStrategy": "indentation",
   "editor.semanticHighlighting.enabled": true,
+
   /// ====== WINDOW
   "window.dialogStyle": "custom",
   "window.titleBarStyle": "custom",
@@ -16,19 +17,24 @@
   "window.enableMenuBarMnemonics": false,
   "window.commandCenter": true,
   "window.menuBarVisibility": "hidden",
+
   /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "helium-icon-theme",
+  "workbench.iconTheme": "bearded-icons",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.editor.showTabs": false,
+
   /// ====== TERMINAL
   "terminal.integrated.cursorStyle": "line",
+
   /// ====== FILES
   "files.eol": "\n",
+
   /// ====== BREADCRUMBS
   "breadcrumbs.enabled": false,
+
   /// ====== SECURITY
   "security.workspace.trust.enabled": false,
   "security.workspace.trust.emptyWindow": false,
@@ -36,6 +42,7 @@
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.banner": "never",
   /// ====== EXTENSIONS
+
   /// Lua (sumneko.lua)
   "Lua.telemetry.enable": false,
   "Lua.runtime.version": "Lua 5.1",
@@ -43,18 +50,23 @@
   "Lua.completion.displayContext": 4,
   "Lua.completion.keywordSnippet": "Both",
   "Lua.hint.enable": true,
+
   /// Nim (nimsaem.nimvscode)
   // "nim.buildOnSave": false,
   // "nim.provider": "none",
+
   /// CodeSnap (adpyke.codesnap)
   "codesnap.backgroundColor": "rgba(0,0,0,0)",
   "codesnap.showWindowControls": false,
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
+
   /// Meson (mesonbuild.mesonbuild)
   "mesonbuild.configureOnOpen": false,
+
   /// Gruvbox Material (sainnhe.gruvbox-material)
   "gruvboxMaterial.darkContrast": "soft",
+
   /// Go (golang.go)
   // "go.buildOnSave": "off",
   // "[go]": {
