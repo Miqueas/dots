@@ -9,6 +9,7 @@
   "editor.autoClosingBrackets": "always",
   "editor.foldingStrategy": "indentation",
   "editor.semanticHighlighting.enabled": true,
+  "editor.rulers": [ 100 ],
 
   /// ====== WINDOW
   "window.dialogStyle": "custom",
@@ -50,6 +51,7 @@
   "Lua.completion.displayContext": 4,
   "Lua.completion.keywordSnippet": "Both",
   "Lua.hint.enable": true,
+  "Lua.hint.arrayIndex": "Disable",
 
   /// Nim (nimsaem.nimvscode)
   // "nim.buildOnSave": false,
