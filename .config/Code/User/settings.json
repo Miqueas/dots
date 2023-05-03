@@ -9,7 +9,7 @@
   "editor.autoClosingBrackets": "always",
   "editor.foldingStrategy": "indentation",
   "editor.semanticHighlighting.enabled": true,
-  "editor.rulers": [ 100 ],
+  "editor.rulers": [ 80, 100, 120 ],
 
   /// ====== WINDOW
   "window.dialogStyle": "custom",
