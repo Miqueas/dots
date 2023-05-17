@@ -1,6 +1,6 @@
 {
   /// ====== EDITOR
-  "editor.fontSize": 12,
+  "editor.fontSize": 13,
   "editor.fontFamily": "CaskaydiaCove Nerd Font",
   "editor.tabSize": 2,
   "editor.fontLigatures": true,
