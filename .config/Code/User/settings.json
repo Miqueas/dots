@@ -98,4 +98,8 @@
 
   /// Gruvbox Material (sainnhe.gruvbox-material)
   "gruvboxMaterial.darkContrast": "soft",
+  "window.zoomLevel": 0,
+
+  /// Makefile Tools (vscode.makefile-tools)
+  "makefile.makefilePath": "Makefile"
 }
