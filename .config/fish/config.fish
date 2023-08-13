@@ -19,14 +19,18 @@ set -l nimbleBins "$HOME/.nimble/bin"
 set -l flutterBins "$HOME/.local/flutter/bin"
 # set -x BUN_INSTALL "$HOME/.bun"
 
+# if not set -q ANDROID_HOME
+#   set -x ANDROID_HOME /opt/android-sdk
+# end
+
+if not set -q CHROME_EXECUTABLE
+  set -x CHROME_EXECUTABLE google-chrome-stable
+end
+
 for p in $localBins "$localBins/gcm" $nimbleBins $flutterBins
   if not contains $p $PATH
     set -a PATH $p
   end
-end
-
-if not set -q CHROME_EXECUTABLE
-  set -x CHROME_EXECUTABLE google-chrome-stable
 end
 
 #set -x PATH $PATH $LocalBins $NimbleBins $BUN_INSTALL/bin
