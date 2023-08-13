@@ -10,22 +10,23 @@
   "editor.foldingStrategy": "indentation",
   "editor.semanticHighlighting.enabled": true,
   "editor.rulers": [ 80, 100, 120 ],
+  "editor.insertSpaces": true,
 
   /// ====== WINDOW
   "window.dialogStyle": "custom",
   "window.titleBarStyle": "custom",
   "window.customMenuBarAltFocus": false,
   "window.enableMenuBarMnemonics": false,
-  "window.commandCenter": true,
   "window.menuBarVisibility": "hidden",
 
   /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "bearded-icons",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.editor.showTabs": false,
+  "workbench.layoutControl.enabled": false,
 
   /// ====== TERMINAL
   "terminal.integrated.cursorStyle": "line",
@@ -42,20 +43,48 @@
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.banner": "never",
-  /// ====== EXTENSIONS
 
+  /// ====== INTEGRATED TERMINAL
+  "terminal.integrated.profiles.windows": {
+    // Profiles for MSYS2 on Windows
+    "MSYS/MSYS": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -msys -shell fish" ]
+    },
+    "MSYS/UCRT64": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -ucrt64 -shell fish" ]
+    },
+    "MSYS/MINGW64": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -mingw64 -shell fish" ]
+    },
+    "MSYS/MINGW32": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -mingw32 -shell fish" ]
+    },
+    "MSYS/CLANG64": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -clang64 -shell fish" ]
+    },
+    "MSYS/CLANG32": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -clang32 -shell fish" ]
+    },
+    "MSYS/CLANGARM64": {
+      "path": "cmd.exe",
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -clangarm64 -shell fish" ]
+    }
+  },
+  
+  /// ====== EXTENSIONS
   /// Lua (sumneko.lua)
   "Lua.telemetry.enable": false,
   "Lua.runtime.version": "Lua 5.1",
   "Lua.completion.callSnippet": "Replace",
   "Lua.completion.displayContext": 4,
-  "Lua.completion.keywordSnippet": "Both",
   "Lua.hint.enable": true,
   "Lua.hint.arrayIndex": "Disable",
-
-  /// Nim (nimsaem.nimvscode)
-  // "nim.buildOnSave": false,
-  // "nim.provider": "none",
 
   /// CodeSnap (adpyke.codesnap)
   "codesnap.backgroundColor": "rgba(0,0,0,0)",
@@ -65,16 +94,8 @@
 
   /// Meson (mesonbuild.mesonbuild)
   "mesonbuild.configureOnOpen": false,
+  "mesonbuild.buildFolder": "_BUILD",
 
   /// Gruvbox Material (sainnhe.gruvbox-material)
   "gruvboxMaterial.darkContrast": "soft",
-
-  /// Go (golang.go)
-  // "go.buildOnSave": "off",
-  // "[go]": {
-  //   "editor.formatOnSave": false,
-  //   "editor.codeActionsOnSave": {
-  //     "source.organizeImports": false
-  //   }
-  // }
 }
