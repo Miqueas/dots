@@ -3,10 +3,9 @@
 /* Background */
 #whiskermenu-window { background: none; }
 
-/* Background color and margin */
+/* Background margin */
 #whiskermenu-window > frame {
-  padding: 50px 100px;
-  padding-top: 40px;
+  padding: 120px 160px;
 }
 
 /* Borders */
