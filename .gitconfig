@@ -1,0 +1,13 @@
+[user]
+	name = Miqueas
+	email = miqueas2020@yahoo.com
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/bin/git-credential-manager
+	credentialStore = secretservice
+[core]
+	editor = code --wait
+[cola]
+	icontheme = dark
+	theme = flat-dark-blue
