@@ -8,29 +8,19 @@ alias fpr "flatpak uninstall -y"
 alias fpc "flatpak uninstall -y --unused"
 alias fps "flatpak search --columns=name:f,description:e,application:f,version,remotes"
 alias fpl "flatpak list --columns=name:f,application:f,version,branch"
-alias ls "exa -lF --no-time --no-permissions --no-user --group-directories-first"
-alias la "exa -laF --no-time --no-permissions --no-user --group-directories-first"
-alias lt "exa -lTF --no-time --no-permissions --no-user --group-directories-first"
-alias lat "exa -laTF --no-time --no-permissions --no-user --group-directories-first"
+alias ls "exa -lF --no-time --no-permissions --group-directories-first"
+alias la "exa -laF --no-time --no-permissions --group-directories-first"
+alias lt "exa -lTF --no-time --no-permissions --group-directories-first"
+alias lat "exa -laTF --no-time --no-permissions --group-directories-first"
 alias cat bat
+
+set -q ANDROID_HOME; or set -x ANDROID_HOME $HOME/.local/android-sdk
+set -q ANDROID_SDK_ROOT; or set -x ANDROID_SDK_ROOT $HOME/.local/android-sdk
+set -q CHROME_EXECUTABLE; or set -x CHROME_EXECUTABLE google-chrome-stable
 
 set -l localBins "$HOME/.local/bin"
 set -l nimbleBins "$HOME/.nimble/bin"
 set -l flutterBins "$HOME/.local/flutter/bin"
-# set -x BUN_INSTALL "$HOME/.bun"
+set -l androidBins "$ANDROID_HOME/cmdline-tools/latest/bin"
 
-# if not set -q ANDROID_HOME
-#   set -x ANDROID_HOME /opt/android-sdk
-# end
-
-if not set -q CHROME_EXECUTABLE
-  set -x CHROME_EXECUTABLE google-chrome-stable
-end
-
-for p in $localBins "$localBins/gcm" $nimbleBins $flutterBins
-  if not contains $p $PATH
-    set -a PATH $p
-  end
-end
-
-#set -x PATH $PATH $LocalBins $NimbleBins $BUN_INSTALL/bin
+set -ax PATH $localBins $nimbleBins $flutterBins $androidBins
