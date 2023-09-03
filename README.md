@@ -3,7 +3,7 @@
   <h3>Welcome to my dotfiles repository</h3>
 </div>
 
-![](screenshots/full.png)
+![](screenshots/rice.png)
 
 System details:
 
@@ -29,7 +29,7 @@ Wallpaper from [Unsplash](https://unsplash.com/es/fotos/Nhx2IVkw22s), credits to
 
 ![](screenshots/rxfetch.png)
 
-> NOTE: this is a custom version (a port to fish) of [rxfetch](https://github.com/Mangeshrex/rxfetch), all credits of the original code to the author (@Mangeshrex)
+> NOTE: this is a custom version (a port to fish) of [rxfetch](https://github.com/Mangeshrex/rxfetch), all credits of the original code to the [author](https://github.com/Mangeshrex)
 
 ### VS Code
 
