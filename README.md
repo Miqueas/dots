@@ -8,17 +8,18 @@
 System details:
 
   * __Distro__: Arch
-  * __DE__: GNOME
-  * __WM__: Mutter (package [mutter-performane](https://aur.archlinux.org/packages/mutter-performance))
-  * __Theme__: Adwaita
-  * __Icons__: None
-  * __Font__: Cantarell (default size)
+  * __DE__: XFCE
+  * __WM__: XFWM
+  * __Theme__: Qogir Dark
+  * __Icons__: Qogir Dark
+  * __Cursor__: Qogir Dark
+  * __Font__: Cantarell (10pt)
   * __Monospace Font__: [Caskaydia Cove Nerd Font](https://archlinux.org/packages/community/any/otf-cascadia-code-nerd/) (10pt)
   * __Terminal__: [Black Box](https://flathub.org/apps/details/com.raggesilver.BlackBox)
-  * __Terminal Theme__: [Monokai Pro](https://github.com/Gogh-Co/Gogh/blob/master/themes/Monokai%20Pro.yml)
-  * __VS Code Theme__: [Monokai Pro](https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode)
+  * __Terminal Theme__: One Dark
+  * __VS Code Theme__: [Github Dark](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 
-Wallpaper from [Unsplash](https://unsplash.com/es/fotos/R6me1o4eWxg), credits to the author.
+Wallpaper from [Unsplash](https://unsplash.com/es/fotos/Nhx2IVkw22s), credits to the author.
 
 ### Black Box
 
@@ -28,7 +29,7 @@ Wallpaper from [Unsplash](https://unsplash.com/es/fotos/R6me1o4eWxg), credits to
 
 ![](screenshots/rxfetch.png)
 
-> NOTE: this is a custom version (a port to fish) of [rxfetch](https://github.com/Mangeshrex/rxfetch), all credits to the author
+> NOTE: this is a custom version (a port to fish) of [rxfetch](https://github.com/Mangeshrex/rxfetch), all credits of the original code to the author (@Mangeshrex)
 
 ### VS Code
 
