@@ -22,7 +22,7 @@
   /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.colorTheme": "Monokai Pro",
+  "workbench.colorTheme": "Chogori Darkest Blue",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.editor.showTabs": false,
@@ -49,31 +49,31 @@
     // Profiles for MSYS2 on Windows
     "MSYS/MSYS": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -msys -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -msys -shell fish" ]
     },
     "MSYS/UCRT64": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -ucrt64 -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -ucrt64 -shell fish" ]
     },
     "MSYS/MINGW64": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -mingw64 -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -mingw64 -shell fish" ]
     },
     "MSYS/MINGW32": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -mingw32 -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -mingw32 -shell fish" ]
     },
     "MSYS/CLANG64": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -clang64 -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -clang64 -shell fish" ]
     },
     "MSYS/CLANG32": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -clang32 -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -clang32 -shell fish" ]
     },
     "MSYS/CLANGARM64": {
       "path": "cmd.exe",
-      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -where C:\\MSYS\\home\\miqueas -no-start -use-full-path -clangarm64 -shell fish" ]
+      "args": [ "/c", "C:\\MSYS\\msys2_shell.cmd -defterm -no-start -clangarm64 -shell fish" ]
     }
   },
   
@@ -96,10 +96,9 @@
   "mesonbuild.configureOnOpen": false,
   "mesonbuild.buildFolder": "_BUILD",
 
-  /// Gruvbox Material (sainnhe.gruvbox-material)
-  "gruvboxMaterial.darkContrast": "soft",
-  "window.zoomLevel": 0,
-
   /// Makefile Tools (vscode.makefile-tools)
-  "makefile.makefilePath": "Makefile"
+  "makefile.makefilePath": "Makefile",
+
+  /// CMake 
+  "cmake.configureOnOpen": false
 }
