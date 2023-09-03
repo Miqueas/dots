@@ -1,9 +1,10 @@
-<div align="center">
-  <h1>dots</h1>
-  <h3>Welcome to my dotfiles repository</h3>
-</div>
+<p align="center">
+  <strong>🔥💻 Welcome to my Linux "dot" files 💻🔥</strong>
+</p>
 
-![](screenshots/rice.png)
+<img align="right" src="screenshots/rice.png" width="400px">
+
+A very simple rice tbh, if u like it, leave an star and share!
 
 System details:
 
@@ -19,18 +20,4 @@ System details:
   * __Terminal Theme__: One Dark
   * __VS Code Theme__: [Github Dark](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 
-Wallpaper from [Unsplash](https://unsplash.com/es/fotos/Nhx2IVkw22s), credits to the author.
-
-### Black Box
-
-![](screenshots/console.png)
-
-### Rxfetch
-
-![](screenshots/rxfetch.png)
-
-> NOTE: this is a custom version (a port to fish) of [rxfetch](https://github.com/Mangeshrex/rxfetch), all credits of the original code to the [author](https://github.com/Mangeshrex)
-
-### VS Code
-
-![](screenshots/vscode.png)
+Wallpaper from [Unsplash](https://unsplash.com/es/fotos/Nhx2IVkw22s), credits to the author. I'm also using a custom version of [rxfetch](https://github.com/Mangeshrex/rxfetch), all credits of the original code to the author
