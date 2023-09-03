@@ -19,15 +19,19 @@ function fish_prompt
   set -l uid (id -u)
   set -l pchar "»"
 
-  set -l time (printf "$b$c1%s$c0" (date "+%I:%M %P"))
+  set -l time (printf "$b$c1%s$c0" (date "+%H:%M"))
   set -l last (printf "$b$c6%s$c0" (echo $CMD_DURATION | humanize_duration))
 
   set -l l1 " $time $d∷$c0 $last"
   set -l l2 " $b%s$c0"
   set -l l3 " $b%s$pchar$c0 "
+
+  if set -q MSYSTEM
+    set l3 (printf $l3 "$MSYSTEM %s")
+  end
   
   if [ $s -eq 0 ]
-    set l3 (printf $l3 '')
+    set l3 (printf $l3 "")
   else
     set l3 (printf $l3 "$c5$s ")
   end
