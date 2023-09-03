@@ -22,7 +22,7 @@
   /// ====== WORKBENCH
   "workbench.sideBar.location": "right",
   "workbench.editor.untitled.hint": "hidden",
-  "workbench.colorTheme": "Chogori Darkest Blue",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.editor.showTabs": false,
