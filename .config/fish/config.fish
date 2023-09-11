@@ -1,13 +1,6 @@
-# "Removes" the welcome message (sets it to nothing)
+# Removes the welcome message (sets it to nothing)
 set fish_greeting
 
-alias fp "flatpak"
-alias fpu "flatpak update"
-alias fpi "flatpak install -y"
-alias fpr "flatpak uninstall -y"
-alias fpc "flatpak uninstall -y --unused"
-alias fps "flatpak search --columns=name:f,description:e,application:f,version,remotes"
-alias fpl "flatpak list --columns=name:f,application:f,version,branch"
 alias ls "exa -lF --no-time --no-permissions --group-directories-first"
 alias la "exa -laF --no-time --no-permissions --group-directories-first"
 alias lt "exa -lTF --no-time --no-permissions --group-directories-first"
@@ -24,3 +17,25 @@ set -l flutterBins "$HOME/.local/flutter/bin"
 set -l androidBins "$ANDROID_HOME/cmdline-tools/latest/bin"
 
 set -ax PATH $localBins $nimbleBins $flutterBins $androidBins
+
+function fp -d "Little flatpak wrapper" -w "flatpak"
+  set -l action $argv[1]
+  set -e argv[1]
+
+  switch $action
+    case i
+      flatpak install -y $argv
+    case r
+      flatpak uninstall -y $argv
+    case u
+      flatpak update
+    case s
+      flatpak search --columns=name:f,description:e,application:f,version,remotes $argv
+    case l
+      flatpak list --columns=name:f,application:f,version,branch $argv
+    case c
+      flatpak uninstall -y --unused
+    case '*'
+      echo "Not implemented"
+  end
+end
