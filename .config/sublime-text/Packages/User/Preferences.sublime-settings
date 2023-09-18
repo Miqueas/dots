@@ -4,7 +4,7 @@
   "tab_size": 2,
   "translate_tabs_to_spaces": true,
   "theme": "Adaptive.sublime-theme",
-  "color_scheme": "GitHub Dark.sublime-color-scheme",
+  "color_scheme": "Monokai Pro.sublime-color-scheme",
   "caret_style": "smooth",
   "caret_extra_width": 1,
   "caret_extra_top": 2,
