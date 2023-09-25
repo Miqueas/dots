@@ -12,6 +12,7 @@ cantarell-fonts
 ccls
 cmake
 discord
+dconf-editor
 dmd
 dtools
 egl-wayland
