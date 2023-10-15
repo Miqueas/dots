@@ -1,9 +1,7 @@
-base
-base-devel
-linux
-linux-firmware
 android-udev
 baobab
+base
+base-devel
 bat
 blueprint-compiler
 bluez
@@ -11,11 +9,11 @@ bluez-utils
 cantarell-fonts
 ccls
 cmake
-discord
 dconf-editor
 dmd
 dtools
 egl-wayland
+epiphany
 evince
 exfatprogs
 eza
@@ -67,7 +65,10 @@ libheif
 libjxl
 libva-intel-driver
 libva-utils
+linux
+linux-firmware
 lua
+lua-dkjson
 lua-sec
 lua-socket
 lua51
@@ -78,6 +79,7 @@ lua52-sec
 lua53
 lua53-sec
 lua53-socket
+luarocks
 man-db
 mesa-amber
 mesa-utils
