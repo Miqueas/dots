@@ -119,7 +119,7 @@ function getDistroName
   if [ "$os" = "Android" ]
     echo 'android'
   else
-    string lower (awk -F '"' '/PRETTY_NAME/ { print $2 }' /etc/os-release)
+    string lower (awk -F '"' '/^PRETTY_NAME/ { print $2 }' /etc/os-release)
   end
 end
 
