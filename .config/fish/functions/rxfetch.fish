@@ -2,26 +2,35 @@
 
 function rxfetch -d "System information fetcher"
   # Colors
-  set -l d        (set_color --dim)
-  set -l c0       (set_color normal)
-  set -l c1       (set_color -o magenta)
-  set -l c2       (set_color -o green)
-  set -l c3       (set_color -o blue)
-  set -l c4       (set_color -o red)
-  set -l c5       (set_color -o yellow)
-  set -l c6       (set_color -o cyan)
+  set -l d  (set_color --dim)
+  set -l b  (set_color --bold)
+  set -l c0 (set_color normal)
+  set -l c1 (set_color -o magenta)
+  set -l c2 (set_color -o green)
+  set -l c3 (set_color -o blue)
+  set -l c4 (set_color -o red)
+  set -l c5 (set_color -o yellow)
+  set -l c6 (set_color -o cyan)
 
   set -l template "
 
-                    $c2 os $c0   $d=>$c0 $(getDistroName) ($(uname -m))
-  $c3       /\\      $c0   $c5 ker   $c0$d=>$c0 $(uname -r)
-  $c3      /  \\     $c0   $c6 pkgs  $c0$d=>$c0 $(getPackageInfo)
-  $c3     /%s\\$c0$c3   \\   $c0   $c4  sh   $c0 $d=>$c0 $(basename $SHELL)
-  $c3    /      \\   $c0   $c1 ram   $c0$d=>$c0 $(getMemoryInfo)
-  $c3   /   %s,,$c0$c3   \\  $c0   $c2 init  $c0$d=>$c0 $(getInit)
-  $c3  /   |  |  %s-$c0$c3\\ $c0   $c5 de/wm $c0$d=>$c0 $(getDEWMInfo)
-  $c3 /%s_-''    ''-_$c0$c3\\$c0   $c6 up   $c0 $d=>$c0 $(getUptime)
-                    $c4 disk $c0 $d=>$c0 $(getStorageInfo)
+
+$b              eeeeeee              $c0
+$b          eeeee     eeeee          $c0
+$b       eeee  eeeeeeeee  eeee       $c0
+$b      eee  eee       ee   eee      $c0$c2 Distro   $c0$d➜$c0 $(getDistroName) ($(uname -m))
+$b     ee   eee        ee     ee     $c0$c5 Kernel   $c0$d➜$c0 $(uname -r)
+$b    ee   eee         ee      ee    $c0$c6 Packages $c0$d➜$c0 $(getPackageInfo)
+$b    ee   ee         ee      eee    $c0$c4 Shell    $c0$d➜$c0 $(basename $SHELL)
+$b    ee  eee       eee     eeeee    $c0$c1 RAM      $c0$d➜$c0 $(getMemoryInfo)
+$b    ee   ee     eee      eee ee    $c0$c2 Init     $c0$d➜$c0 $(getInit)
+$b    ee   eee  eeee     eee   ee    $c0$c5 DE/WM    $c0$d➜$c0 $(getDEWMInfo)
+$b     ee  eeeeeee    eeeee   ee     $c0$c6 Uptime   $c0$d➜$c0 $(getUptime)
+$b      eeeee  eeeeeeee     eee      $c0$c4 Storage  $c0$d➜$c0 $(getStorageInfo)
+$b       eeee             eeee       $c0
+$b          eeeee     eeeee          $c0
+$b             eeeeeeeee             $c0
+
 
 "
 
