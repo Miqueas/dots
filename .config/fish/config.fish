@@ -1,10 +1,10 @@
 # Removes the welcome message (sets it to nothing)
 set fish_greeting
 
-alias ls "exa -lF --no-time --no-permissions --group-directories-first"
-alias la "exa -laF --no-time --no-permissions --group-directories-first"
-alias lt "exa -lTF --no-time --no-permissions --group-directories-first"
-alias lat "exa -laTF --no-time --no-permissions --group-directories-first"
+alias ls "eza -lF --no-time --no-permissions --group-directories-first"
+alias la "eza -laF --no-time --no-permissions --group-directories-first"
+alias lt "eza -lTF --no-time --no-permissions --group-directories-first"
+alias lat "eza -laTF --no-time --no-permissions --group-directories-first"
 alias cat bat
 
 set -q ANDROID_HOME; or set -x ANDROID_HOME $HOME/.local/android-sdk
